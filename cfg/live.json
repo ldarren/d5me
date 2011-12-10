@@ -1,0 +1,70 @@
+var CONST = {
+  LIVE: 'live',
+  STAGE: 'stage',
+  DEV: 'dev'
+};
+
+var env_dev = {
+  s3: {
+    key: 'AKIAIIFGX5Y7GPOUTUXA',
+    secret: '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',
+    bucket: 'd5me-upload'
+  },
+
+  mongo: {
+    host: 'localhost',
+    port: 27019,
+    database: 'd5me',
+    collection: 'test-insert'
+  }
+};
+
+var env_stage = {
+  s3: {
+    key: 'AKIAIIFGX5Y7GPOUTUXA',
+    secret: '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',
+    bucket: 'd5me-upload'
+  },
+
+  mongo: {
+    host: 'localhost',
+    port: 27019,
+    database: 'd5me',
+    collection: 'test-insert'
+  }
+};
+
+var env_live = {
+  s3: {
+    key: 'AKIAIIFGX5Y7GPOUTUXA',
+    secret: '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',
+    bucket: 'd5me-upload'
+  },
+
+  mongo: {
+    host: 'localhost',
+    port: 27019,
+    database: 'd5me',
+    collection: 'test-insert'
+  }
+};
+
+module.exports = function(env){
+  var cfg = {};
+
+  switch(env){
+    case CONST.LIVE:
+      cfg.CONST = CONST;
+      cfg.env = env_live;
+      break;
+    case CONST.STAGE;
+      cfg.CONST = CONST;
+      cfg.env = env_stage;
+      break;
+    case CONST.DEV;
+    default:
+      cfg.CONST = CONST;
+      cfg.env = env_dev;
+      break;
+  }
+};
