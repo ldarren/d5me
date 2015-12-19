@@ -1,0 +1,27 @@
+{
+  "web": {
+    "id":"web",
+    "host":null,
+    "port":1337,
+    "allowDomain":"*"
+  },
+  "storage": {
+    "id":"s3_upload",
+    "key": "AKIAIIFGX5Y7GPOUTUXA",
+    "secret": "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",
+    "bucket": "d5me-upload"
+  },
+  "memcached": {
+    "hosts":["localhost:11211"],
+    "options": {
+     "poolSize": 2
+    }
+  },
+  "memcached-queue": {
+    "id":"room1",
+    "hosts":["localhost:11211"],
+    "options": {
+     "poolSize": 2
+    }
+  }
+}
